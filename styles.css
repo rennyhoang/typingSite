@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    background-color: floralwhite;
+    color:black;
+}   
+
+body, .quote-input {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar{
+    background-color: #A0F2A8; 
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.container {
+    background-color: #A0F2A8;
+    padding: 1rem;
+    border-radius: .5rem;
+    border-color: floralwhite;
+    width: 700px;
+    max-width: 90%;   
+}
+
+.container-fluid {
+    justify-content: flex-start !important;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction:row;
+}
+  
+.timer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: forestgreen;
+    font-weight: bold;
+}
+
+.stats {
+    font-size: 2rem;
+    color: forestgreen;
+}
+
+.btn {
+    margin: 1rem;
+}
+
+.btn {
+    background-color: #A0F2A8; 
+    color:black;
+    border-color: forestgreen;
+}
+
+.btn:hover {
+    background-color: forestgreen; 
+    color:floralwhite;
+    border-color: #A0F2A8;
+}
+
+.btn-secondary.dropdown-toggle:focus {
+    background-color: forestgreen !important; 
+    color:floralwhite !important;
+    border-color: #A0F2A8 !important;
+}
+
+.dropdown-item {
+    background-color: floralwhite;
+}
+
+.quote-display {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-left: calc(-1rem - 2px);
+    margin-left: calc(1rem + 2px);
+}
+
+.quote-input {
+    background-color: transparent;
+    border: 2px solid green;
+    color: black;
+    outline: none;
+    width: 100%;
+    height: 8rem;
+    margin: auto;
+    resize: none;
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+.quote-input:focus {
+    border-color: black;
+}
+
+.correct{
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
