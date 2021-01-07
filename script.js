@@ -5,6 +5,7 @@ const timerElement = document.getElementById('timer')
 
 let numOfCorrect = 0
 let numOfIncorrect = 0
+let wpmCounts = []
 
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
@@ -35,7 +36,10 @@ quoteInputElement.addEventListener('input', () => {
         }
     })
 
-    if (arrayQuote.length == arrayValue.length) {renderNewQuote()}
+    if (arrayQuote.length == arrayValue.length) {
+        wpmCounts.push(Math.floor((totalChars / 5) / (time / 60)))
+        document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + Math.floor(getAvg(wpmCounts))
+        renderNewQuote()}
 })
 
 function getRandomQuote()
@@ -49,6 +53,7 @@ async function renderNewQuote() {
     numOfCorrect = 0
     numOfIncorrect = 0
     startTimer()
+    console.log(getAvg(wpmCounts))
     document.getElementById("wpmDisplay").innerHTML = "WPM: " + 0
     document.getElementById("accDisplay").innerHTML = "Accuracy: " + 100 + "%"
     const quote = await getRandomQuote()
@@ -85,8 +90,6 @@ function displayWPM(arrayValue) {
 }
 
 function displayAcc() {
-    console.log(numOfCorrect)
-    console.log(numOfIncorrect)
     if ((numOfCorrect + numOfIncorrect) * 100 == 0)
     {
         document.getElementById("accDisplay").innerHTML = "Accuracy: " + "100%"
@@ -95,6 +98,18 @@ function displayAcc() {
     {
         document.getElementById("accDisplay").innerHTML = "Accuracy: " + Math.floor(numOfCorrect / (numOfCorrect + numOfIncorrect) * 100) + "%"
     }
+}
+
+function getAvg(arr){
+    let sum = 0
+    let len = arr.length
+
+    for (var i in arr)
+    {
+        sum += arr[i]
+    }
+
+    return sum / len
 }
 
 renderNewQuote()
