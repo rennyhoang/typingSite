@@ -6,6 +6,7 @@ const timerElement = document.getElementById('timer')
 let numOfCorrect = 0
 let numOfIncorrect = 0
 let wpmCounts = []
+let dm = false
 
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
@@ -29,6 +30,12 @@ quoteInputElement.addEventListener('input', () => {
             numOfCorrect += 1
         } 
         else {
+            if (dm == true){
+                console.log("I hope this is working")
+                wpmCounts.push(0)
+                document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + getAvg(wpmCounts)
+                renderNewQuote()
+            }
             characterSpan.classList.add('incorrect')
             characterSpan.classList.remove('correct')
             correct = false
@@ -38,7 +45,7 @@ quoteInputElement.addEventListener('input', () => {
 
     if (arrayQuote.length == arrayValue.length) {
         wpmCounts.push(Math.floor((totalChars / 5) / (time / 60)))
-        document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + Math.floor(getAvg(wpmCounts))
+        document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + getAvg(wpmCounts)
         renderNewQuote()}
 })
 
@@ -50,12 +57,21 @@ function getRandomQuote()
 }
 
 async function renderNewQuote() {
+    console.log(dm)
     numOfCorrect = 0
     numOfIncorrect = 0
     startTimer()
-    console.log(getAvg(wpmCounts))
+
+    if (dm == true){
+        document.getElementById("dmButton").innerHTML = "Exit Instant Death Mode"
+    }
+    else{
+        document.getElementById("dmButton").innerHTML = "Instant Death Mode"
+    }
+
     document.getElementById("wpmDisplay").innerHTML = "WPM: " + 0
     document.getElementById("accDisplay").innerHTML = "Accuracy: " + 100 + "%"
+
     const quote = await getRandomQuote()
     quoteDisplayElement.innerText = ''
     quote.split('').forEach(character => {
@@ -109,7 +125,13 @@ function getAvg(arr){
         sum += arr[i]
     }
 
-    return sum / len
+    return Math.floor(sum / len)
+}
+
+function triggerDM(){
+    dm = !dm
+    wpmCounts = []
+    renderNewQuote()
 }
 
 renderNewQuote()
