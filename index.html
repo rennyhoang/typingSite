@@ -33,6 +33,7 @@
                 <a class="dropdown-item" onclick="changeSound('cherry_blue.mp3')">Cherry Blue</a>
             </div>
         </div>
+        <button class="btn" type="button" onclick="muteSound()">Mute Sound</button>
     </div>
     <div class="container">
         <div class="quote-display" id="quoteDisplay"></div>
@@ -47,16 +48,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.core.min.js"></script>
     <script>
         var switchSound = new Howl({
-            src: ['cherry_red.mp3']
+            src: ['cherry_red.mp3'],
+            volume: 1
         })
 
         function changeSound(switchType)
         {
             switchSound = new Howl ({
-                src: [switchType]
+                src: [switchType],
+                volume: 1
             })
 
             renderNewQuote()
+        }
+
+        function muteSound(){
+            switchSound = new Howl ({
+                src: ['cherry_red.mp3'],
+                volume: 0
+            })
         }
     </script>
 </body>
