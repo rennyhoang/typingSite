@@ -1,6 +1,6 @@
 # Switch Typing
 
-![alt text](https://imgur.com/CN3p9w6)
+[Imgur](https://imgur.com/CN3p9w6)
 ### Video Demo: https://youtu.be/00SN1v736Uk
 
 ## Description:
