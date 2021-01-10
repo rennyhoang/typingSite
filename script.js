@@ -31,7 +31,6 @@ quoteInputElement.addEventListener('input', () => {
         } 
         else {
             if (dm == true){
-                console.log("I hope this is working")
                 wpmCounts.push(0)
                 document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + getAvg(wpmCounts)
                 renderNewQuote()
@@ -57,7 +56,6 @@ function getRandomQuote()
 }
 
 async function renderNewQuote() {
-    console.log(dm)
     numOfCorrect = 0
     numOfIncorrect = 0
     startTimer()
