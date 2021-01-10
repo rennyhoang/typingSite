@@ -1,6 +1,6 @@
 # Switch Typing
 
-### Video Demo: 
+### Video Demo: https://youtu.be/00SN1v736Uk
 
 ## Description:
 
