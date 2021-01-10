@@ -1,6 +1,6 @@
 # Switch Typing
 
-[Imgur](https://imgur.com/CN3p9w6)
+[![thumbnail.jpg](https://i.postimg.cc/4xCzGgHZ/thumbnail.jpg)](https://postimg.cc/ZCc9PXLD)
 ### Video Demo: https://youtu.be/00SN1v736Uk
 
 ## Description:
