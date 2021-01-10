@@ -21,7 +21,7 @@ Switch Typing is an application that allows you to practice your typing speed an
 - JS: Bootstrap is used to control dropdowns, and howler is used to play sounds (even while other sounds are still playing). In order to render a new quote, I grab the quote from Quotable and split the quote into multiple spans containing each character. This was done so that I could iterate over both the user input and the quote to compare them both. If a letter from the input is wrong, I add the class of "incorrect" to the corresponding character in the quote and likewise for correct inputs. If death mode is turned on, then a new quote is rendered with every incorrect input.
 
 - The timer is created using the current date and subtracting it from the date grabbed upon loading the page, and the HTML is updated using the setInterval function. 
-- The Average WPM is calculated from an array containing every WPM when the user is at the end of a given quote. The WPM is calculated by counting every character the user has typed, and dividing it by 5 (to get the word count) then dividing the word count by the number of minutes elapsed (timer / 60)
+- The Average WPM is the average of an array containing every WPM when the user is at the end of a given quote. The WPM is calculated by counting every character the user has typed, and dividing it by 5 (to get the word count) then dividing the word count by the number of minutes elapsed (timer / 60)
 - The Accuracy is calculated by marking every character inputted as correct/incorrect and dividing the number of correct characters by the number of total characters.
 
 ### External Libraries Used:
