@@ -131,6 +131,7 @@ function getAvg(arr){
 function triggerDM(){
     dm = !dm
     wpmCounts = []
+    document.getElementById("avgWpmDisplay").innerHTML = "Avg. WPM: " + 0
     renderNewQuote()
 }
 
