@@ -2,7 +2,7 @@
 
 [![thumbnail.jpg](https://i.postimg.cc/4xCzGgHZ/thumbnail.jpg)](https://postimg.cc/ZCc9PXLD)
 ### Video Demo: https://youtu.be/00SN1v736Uk
-### Live Demo: https://rennyhoang.github.io/typingSite/
+### Live Demo: https://rennyhoang.github.io/zen-type/
 
 ## Description:
 
